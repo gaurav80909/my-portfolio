@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #020617;
+  color: white;
+}
+
+/* ===================== */
+/* HERO NEON GLOW        */
+/* ===================== */
+@keyframes gradientFloat {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+
+  50% {
+    transform: scale(1.15) translateY(-20px);
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-gradient {
+  animation: gradientFloat 7s ease-in-out infinite;
+}
+
+/* ===================== */
+/* STAR CURSOR – GLOBAL  */
+/* ===================== */
+.cursor-star {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999;
+
+  background: radial-gradient(circle,
+      #22d3ee 0%,
+      #6366f1 40%,
+      transparent 70%);
+
+  transform: translate(-50%, -50%);
+  animation: starFade 0.9s ease-out forwards;
+}
+
+@keyframes starFade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.5);
+  }
+}
+
+/* ===================== */
+/* SECTION FADE IN       */
+/* ===================== */
+.section {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.9s ease;
+}
+
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================== */
+/* NEON BORDER SPIN      */
+/* ===================== */
+@keyframes borderSpin {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.animate-borderSpin {
+  background-size: 200% 200%;
+  animation: borderSpin 6s linear infinite;
+}
+
+#contact {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spinSlow {
+  animation: spinSlow 18s linear infinite;
+}
+
+/* PHOTO CORNER / BORDER ANIMATION */
+@keyframes borderGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.animate-borderGlow {
+  background: linear-gradient(90deg,
+      #22d3ee,
+      #6366f1,
+      #a855f7,
+      #22d3ee);
+  background-size: 200% 200%;
+  animation: borderGlow 6s linear infinite;
+  border-radius: 9999px;
+}
+
+/* ===================== */
+/* INFINITE MARQUEE      */
+/* ===================== */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.group:hover .animate-marquee {
+  animation-play-state: paused;
+}
