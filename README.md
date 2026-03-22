@@ -26,3 +26,11 @@ A modern and responsive personal portfolio website showcasing my projects, techn
 ---
 
 ## 📂 Project Structure
+
+src/
+├── components/
+├── assets/
+├── hooks/
+├── data/
+├── App.jsx
+├── main.jsx
